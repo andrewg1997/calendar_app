@@ -1,0 +1,23 @@
+<html>
+  <head>
+    
+    <title>Page Title</title>
+    
+    </head>
+  <body>
+    <button onclick="document.location='/cal/{{month_name}}/{{year}}'">Cancel</button>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="fmonth">month:</label>
+        <input type="text" id="fmonth" name="fname" value={{month_name}}><br>
+        <label for="fyear">Year:</label>
+        <input type="text" id="fyear" name="fyear" value={{year}}><br>
+        <label for="fday">Day:</label>
+        <input type="text" id="fday" name="fday"><br>
+        <label for="fcontent">Content:</label>
+        <input type="text" id="fcontent" name="fcontent"><br>
+        <input type="submit" value="Add"><br>
+    </form>
+      
+  </body>
+</html>

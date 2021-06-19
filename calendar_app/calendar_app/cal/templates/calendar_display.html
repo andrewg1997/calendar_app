@@ -1,0 +1,68 @@
+<html>
+  <head>
+    
+    <title>Page Title</title>
+    
+    <style>
+        table, th, td {
+      border: 1px solid black;
+    }
+    </style>
+    
+    </head>
+  <body>
+    <div>
+      <button onclick="document.location='/cal/add_new/{{month_name}}/{{year}}'">Add New</button>
+      <button onclick="document.location='/cal/delete_old/{{month_name}}/{{year}}'">Delete Old</button>
+      <center>
+      <div>
+        <a href="/cal/January/{{year}}">January</a>
+        <a href="/cal/Febuary/{{year}}">Febuary</a>
+        <a href="/cal/March/{{year}}">March</a>
+        <a href="/cal/April/{{year}}">April</a>
+        <a href="/cal/May/{{year}}">May</a>
+        <a href="/cal/June/{{year}}">June</a>
+        <a href="/cal/July/{{year}}">July</a>
+        <a href="/cal/August/{{year}}">August</a>
+        <a href="/cal/Spetember/{{year}}">Spetember</a>
+        <a href="/cal/October/{{year}}">October</a>
+        <a href="/cal/November/{{year}}">November</a>
+        <a href="/cal/December/{{year}}">December</a>
+      </div>
+    </center>
+    <center>
+    <div>
+      <a href="/cal/{{ month_name }}/2021">2021</a>
+      <a href="/cal/{{ month_name }}/2022">2022</a>
+      <a href="/cal/{{ month_name }}/2023">2023</a>
+      <a href="/cal/{{ month_name }}/2024">2024</a>
+    </div>
+    </center>  
+    </div>
+
+    <center><h1><u>{{month_name}} {{year}}</u></h1></center>
+
+    <table style="width:100%">
+        <tr>
+          <th>Sunday</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+        </tr>
+          <tr>
+          {% for q in content %}
+          <td>{{q.0}}<br><textarea id = {{q.0}} rows="7">{{q.3}}</textarea></td>
+            {% if q.0 == 7 or q.0 == 14 or q.0 == 21 or q.0 == 28 %}
+              </tr>
+              <tr>
+            {% endif %}
+          {% endfor %}
+        </tr>
+      </table>
+      
+  </body>
+</html>
+
