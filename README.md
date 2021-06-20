@@ -51,3 +51,6 @@ There are currently 3 views:
 * Make it editable on the calendar view for quick editing
 * Add a to-do list
 * Add a view for repeat events
+* Work on design, layout and color.
+* Add features to deleting events (sorting/filtering list the list)
+* Fix the issue with deleting where if you have an event with the same name they both get deleted.
